@@ -1,6 +1,7 @@
 import { Apple, PlayStore, TripleLogo } from 'assets/svgs'
 import useCounter from 'hooks/useCounter'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import styles from './main.module.scss'
 
@@ -55,18 +56,22 @@ const MainPage = () => {
             </div>
           </div>
           <div className={styles.iconContainer}>
-            <div className={styles.subContainer}>
-              <PlayStore className={styles.icon} />
-              <div className={styles.subText}>
-                2018 구글 플레이스토어 <br /> 올해의 앱 최우수상 수상
+            <Link to='playStore'>
+              <div className={styles.subContainer}>
+                <PlayStore className={styles.icon} />
+                <div className={styles.subText}>
+                  2018 구글 플레이스토어 <br /> 올해의 앱 최우수상 수상
+                </div>
               </div>
-            </div>
-            <div className={styles.subContainer}>
-              <Apple className={styles.icon} />
-              <div className={styles.subText}>
-                2018 애플 앱스토어 <br /> 오늘의 여행 앱 선정
+            </Link>
+            <Link to='apple'>
+              <div className={styles.subContainer}>
+                <Apple className={styles.icon} />
+                <div className={styles.subText}>
+                  2018 애플 앱스토어 <br /> 오늘의 여행 앱 선정
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

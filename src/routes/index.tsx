@@ -1,10 +1,14 @@
+import { Route, Routes } from 'react-router-dom'
 import MainPage from './Main'
+import RedirectPage from './RedirectPage'
 
 const App = () => {
   return (
-    <div className='App'>
-      <MainPage />
-    </div>
+    <Routes>
+      <Route path='/' element={<MainPage />} />
+      <Route path='apple' element={<RedirectPage />} />
+      <Route path='playStore' element={<RedirectPage />} />
+    </Routes>
   )
 }
 
