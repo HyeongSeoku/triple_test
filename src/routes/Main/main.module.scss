@@ -14,10 +14,16 @@
     padding: 50px;
 
     .logoContainer {
+      position: relative;
+      top: 65px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 400px;
+      width: 50%;
+
+      .logoIcon {
+        width: 400px;
+      }
 
       .logoText {
         position: relative;
@@ -30,16 +36,19 @@
 
     .detailContentContainer {
       width: 50%;
-      margin-left: 100px;
+      margin-left: 250px;
 
       .textContainer {
+        margin-bottom: 40px;
         font-size: 36px;
         line-height: 150%;
-        color: colors.$MAIN_FONT;
 
         .text {
+          color: colors.$MAIN_FONT;
+
           mark {
             font-weight: 600;
+            color: colors.$MAIN_FONT;
             background-color: transparent;
           }
         }
@@ -55,6 +64,10 @@
           align-items: center;
           justify-content: center;
 
+          & + .subContainer {
+            margin-left: 30px;
+          }
+
           .icon {
             width: 50px;
           }
@@ -62,6 +75,9 @@
           .subText {
             width: 150px;
             margin-left: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
             color: colors.$SUB_FONT;
           }
         }
