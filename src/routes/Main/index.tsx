@@ -65,7 +65,7 @@ const MainPage = () => {
                 </div>
               </div>
             </Link>
-            <Link to='apple'>
+            <Link to='appStore'>
               <div className={styles.subContainer}>
                 <Apple className={styles.icon} />
                 <div className={styles.subText}>

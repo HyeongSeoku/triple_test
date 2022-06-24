@@ -6,6 +6,10 @@ import { PlayStorePage, AppStorePage } from 'assets/svgs'
 
 import styles from './redirectPage.module.scss'
 
+const APPSTORE_LINK =
+  'https://apps.apple.com/kr/app/%ED%8A%B8%EB%A6%AC%ED%94%8C-%EC%B5%9C%EC%A0%80%EA%B0%80-%EC%98%88%EC%95%BD%EB%B6%80%ED%84%B0-%EC%97%AC%ED%96%89%EA%B3%84%ED%9A%8D%EA%B9%8C%EC%A7%80/id1225499481'
+const PLAYSTORE_LINK = 'https://play.google.com/store/apps/details?id=com.titicacacorp.triple'
+
 const RedirectPage = () => {
   const { pathname } = useLocation()
 
@@ -17,12 +21,8 @@ const RedirectPage = () => {
   }, [pathname])
 
   useMount(() => {
-    if (pathname === '/apple')
-      return window.open(
-        'https://apps.apple.com/kr/app/%ED%8A%B8%EB%A6%AC%ED%94%8C-%EC%B5%9C%EC%A0%80%EA%B0%80-%EC%98%88%EC%95%BD%EB%B6%80%ED%84%B0-%EC%97%AC%ED%96%89%EA%B3%84%ED%9A%8D%EA%B9%8C%EC%A7%80/id1225499481',
-        '_blank'
-      )
-    return window.open('https://play.google.com/store/apps/details?id=com.titicacacorp.triple', '_blank')
+    if (pathname === '/appStore') return window.open(APPSTORE_LINK)
+    return window.open(PLAYSTORE_LINK, '_blank')
   })
   return (
     <div className={styles.container}>
