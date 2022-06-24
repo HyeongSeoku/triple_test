@@ -1,4 +1,5 @@
 @use 'styles/constants/colors';
+@use 'styles/mixins/animation';
 
 .sectionContainer {
   display: flex;
@@ -14,10 +15,17 @@
     padding: 50px;
 
     .logoContainer {
+      @include animation.floatingAnimation(0.7s, 0s);
+      position: relative;
+      top: 65px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 400px;
+      width: 50%;
+
+      .logoIcon {
+        width: 400px;
+      }
 
       .logoText {
         position: relative;
@@ -30,16 +38,23 @@
 
     .detailContentContainer {
       width: 50%;
-      margin-left: 100px;
+      margin-left: 250px;
 
       .textContainer {
+        margin-bottom: 40px;
         font-size: 36px;
         line-height: 150%;
-        color: colors.$MAIN_FONT;
+        opacity: 0;
+
+        @include animation.floatingAnimation(0.7s, 0.1s);
+        animation-fill-mode: forwards;
 
         .text {
+          color: colors.$MAIN_FONT;
+
           mark {
             font-weight: 600;
+            color: colors.$MAIN_FONT;
             background-color: transparent;
           }
         }
@@ -48,12 +63,20 @@
       .iconContainer {
         display: flex;
         flex-direction: row;
+        opacity: 0;
+
+        @include animation.floatingAnimation(0.7s, 0.1s);
+        animation-fill-mode: forwards;
 
         .subContainer {
           display: flex;
           flex-direction: row;
           align-items: center;
           justify-content: center;
+
+          & + .subContainer {
+            margin-left: 30px;
+          }
 
           .icon {
             width: 50px;
@@ -62,6 +85,9 @@
           .subText {
             width: 150px;
             margin-left: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
             color: colors.$SUB_FONT;
           }
         }
