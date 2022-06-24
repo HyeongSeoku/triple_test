@@ -13,18 +13,20 @@
   }
 }
 
-@keyframes fadeIn {
+@keyframes floating {
   from {
     opacity: 0;
+    transform: translateY(70px);
   }
 
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@mixin fadeInAnimation($duration) {
-  animation: fadein $duration;
+@mixin floatingAnimation($duration, $delay) {
+  animation: floating $duration $delay;
 }
 
 @mixin rotateAnimation($duration) {

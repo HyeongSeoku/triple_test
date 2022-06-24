@@ -1,4 +1,5 @@
 @use 'styles/constants/colors';
+@use 'styles/mixins/animation';
 
 .sectionContainer {
   display: flex;
@@ -14,6 +15,7 @@
     padding: 50px;
 
     .logoContainer {
+      @include animation.floatingAnimation(0.7s, 0s);
       position: relative;
       top: 65px;
       display: flex;
@@ -42,6 +44,10 @@
         margin-bottom: 40px;
         font-size: 36px;
         line-height: 150%;
+        opacity: 0;
+
+        @include animation.floatingAnimation(0.7s, 0.1s);
+        animation-fill-mode: forwards;
 
         .text {
           color: colors.$MAIN_FONT;
@@ -57,6 +63,10 @@
       .iconContainer {
         display: flex;
         flex-direction: row;
+        opacity: 0;
+
+        @include animation.floatingAnimation(0.7s, 0.1s);
+        animation-fill-mode: forwards;
 
         .subContainer {
           display: flex;
