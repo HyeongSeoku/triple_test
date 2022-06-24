@@ -3,16 +3,6 @@
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(359deg);
-  }
-}
-
 @keyframes floating {
   from {
     opacity: 0;
@@ -27,8 +17,4 @@
 
 @mixin floatingAnimation($duration, $delay) {
   animation: floating $duration $delay;
-}
-
-@mixin rotateAnimation($duration) {
-  animation: rotation $duration ease-in-out infinite;
 }

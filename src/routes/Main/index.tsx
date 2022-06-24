@@ -1,7 +1,8 @@
 import { Apple, PlayStore, TripleLogo } from 'assets/svgs'
-import useCounter from 'hooks/useCounter'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
+import useCounter from 'hooks/useCounter'
 
 import styles from './main.module.scss'
 
@@ -64,7 +65,7 @@ const MainPage = () => {
                 </div>
               </div>
             </Link>
-            <Link to='apple'>
+            <Link to='appStore'>
               <div className={styles.subContainer}>
                 <Apple className={styles.icon} />
                 <div className={styles.subText}>

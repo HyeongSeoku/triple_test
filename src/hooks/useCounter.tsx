@@ -17,7 +17,7 @@ const useCounter = (callback: () => void, end: number, target: number, initDelay
     if (target === end) clearInterval(timerId)
 
     return () => clearInterval(timerId)
-  }, [end, target])
+  }, [end, initDelay, target])
 }
 
 export default useCounter
